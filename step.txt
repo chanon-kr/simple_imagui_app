@@ -1,0 +1,14 @@
+# Create Virtual Environment
+python -m venv yologui
+
+# Activate Virtual Environment
+yologui\Scripts\activate
+
+# Dependencies for YOLOv8
+pip install -r https://raw.githubusercontent.com/ultralytics/ultralytics/main/requirements.txt
+
+# YOLOv8
+pip install ultralytics
+
+# PySimpleGUI
+pip install pysimplegui
