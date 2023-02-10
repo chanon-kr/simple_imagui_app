@@ -21,6 +21,7 @@ yologui\Scripts\activate
 ```
 
 <br>
+
 ## Install Dependencies
 ```
 # Dependencies for YOLOv8
@@ -32,5 +33,6 @@ pip install pysimplegui
 ```
 
 <br>
+
 ## Run Script
 ```python main.py```
