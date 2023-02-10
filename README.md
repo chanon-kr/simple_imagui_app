@@ -12,6 +12,7 @@ cd simple_imagui_app
 ```
 
 <br>
+
 ## Virtual Environment (Optional)
 ```
 # Create Virtual Environment
