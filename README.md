@@ -1,8 +1,10 @@
 # simple_imagui_app
 Simple sample of Object Detection GUI with YOLOv8 and PySimpleGUI
 <br><br>
+![image](https://user-images.githubusercontent.com/64777509/218513865-331b56c7-1447-4366-ae94-077fa368b9bc.png)
+<br><br>
 ## Medium Article
- : https://medium.com/@chanon.krittapholchai/build-object-detection-gui-with-yolov8-and-pysimplegui-76d5f5464d6c
+https://medium.com/@chanon.krittapholchai/build-object-detection-gui-with-yolov8-and-pysimplegui-76d5f5464d6c
 <br><br>
 # How to use
 ## Git Clone
