@@ -5,9 +5,9 @@ from postprocessing import *
 
 # Create Layouy of the GUI
 layout = [  
-            [sg.Text('GUI Object Detection with Yolo V8')],
-            [sg.Text('Enter Model Name'), sg.InputText(default_text="yolov8s.pt",key='model_name')],
-            [sg.Text('Scale to Show'), sg.InputText(default_text="100", key= 'scale_percent')],
+            [sg.Text('GUI Object Detection with Yolo V8', font='_ 14 bold')],
+            [sg.Text('Enter Model Name', s=15, justification='r'), sg.InputText(default_text="yolov8s.pt",key='model_name')],
+            [sg.Text('Scale to Show', s=15, justification='r'), sg.InputText(default_text="100", key= 'scale_percent')],
             [sg.Button('Run'), sg.Button('Stop'), sg.Button('Close')],
             [sg.Image(filename='', key='image')]
             ]
@@ -17,7 +17,7 @@ window = sg.Window('GUIYoloV8', layout, finalize=True)
 run_model = False
 # Event Loop to process "events"
 while True:
-    event, values = window.read(timeout=1)
+    event, values = window.read(timeout=0)
     # When press Run
     if event == 'Run' : 
         # Set up model and parameter
@@ -25,7 +25,7 @@ while True:
         class_list = model.model.names
         scale_show = int(values['scale_percent'])
         # Read Video
-        video = cv2.VideoCapture(0)
+        video = cv2.VideoCapture(1)
         # Run Signal
         run_model = True
     # When press Stop or close window or press Close
@@ -33,7 +33,7 @@ while True:
         if run_model : 
             run_model = False # Stop running
             video.release() # Release video
-            window['image'].update(filename='') # Destroy picture
+            if event != sg.WIN_CLOSED : window['image'].update(filename='') # Destroy picture
         # When close window or press Close
         if event in (sg.WIN_CLOSED, 'Close'): break
     # Run Model
