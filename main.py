@@ -25,7 +25,7 @@ while True:
         class_list = model.model.names
         scale_show = int(values['scale_percent'])
         # Read Video
-        video = cv2.VideoCapture(1)
+        video = cv2.VideoCapture(0)
         # Run Signal
         run_model = True
     # When press Stop or close window or press Close
@@ -40,7 +40,7 @@ while True:
     if run_model : 
         ret, frame = video.read()
         if ret :
-            results = model.predict(frame)
+            results = model.predict(frame,verbose = False)
             labeled_img = draw_box(frame, results[0], class_list)
             display_img = resize_image(labeled_img, scale_show)
             # Show Image

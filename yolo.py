@@ -13,7 +13,7 @@ video = cv2.VideoCapture(0)
 while True :
     ret, frame = video.read()
     if ret :
-        results = model.predict(frame)
+        results = model.predict(frame,verbose = False)
         labeled_img = draw_box(frame, results[0], class_list)
         display_img = resize_image(labeled_img, scale_show)
         # Show Image
