@@ -39,3 +39,7 @@ pip install pysimplegui
 
 ## Run Script
 ```python main.py```
+
+## Run Script in threaded version
+Thanks to PySimpleGUI. <3
+```python main-thread.py```
