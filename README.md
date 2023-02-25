@@ -41,5 +41,5 @@ pip install pysimplegui
 ```python main.py```
 
 ## Run Script in threaded version
-Thanks to PySimpleGUI. <3
+Thanks to PySimpleGUI. <3 <br>
 ```python main-thread.py```
