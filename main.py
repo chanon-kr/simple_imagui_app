@@ -8,13 +8,14 @@ layout = [
             [sg.Text('GUI Object Detection with Yolo V8', font='_ 14 bold')],
             [sg.Text('Enter Model Name', s=15, justification='r'), sg.InputText(default_text="yolov8s.pt",key='model_name')],
             [sg.Text('Scale to Show', s=15, justification='r'), sg.InputText(default_text="100", key= 'scale_percent')],
+            [sg.Checkbox('Verbose status messages', key='-VERBOSE-')],
             [sg.Button('Run'), sg.Button('Stop'), sg.Button('Close')],
             [sg.Image(filename='', key='image')]
             ]
 
 # Create the Window
 window = sg.Window('GUIYoloV8', layout, finalize=True)
-run_model = False
+run_model, verbose = False, False
 # Event Loop to process "events"
 while True:
     event, values = window.read(timeout=0)
@@ -27,7 +28,7 @@ while True:
         # Read Video
         video = cv2.VideoCapture(0)
         # Run Signal
-        run_model = True
+        run_model, verbose = True, values['-VERBOSE-']
     # When press Stop or close window or press Close
     elif event in ('Stop', sg.WIN_CLOSED, 'Close'):
         if run_model : 
@@ -40,7 +41,7 @@ while True:
     if run_model : 
         ret, frame = video.read()
         if ret :
-            results = model.predict(frame,verbose = False)
+            results = model.predict(frame, verbose=verbose)
             labeled_img = draw_box(frame, results[0], class_list)
             display_img = resize_image(labeled_img, scale_show)
             # Show Image
