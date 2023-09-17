@@ -12,7 +12,7 @@ text_x_position = 50
 text_y_position = 0
 
 # Open the camera
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 # Get Camera Parameter
 width  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
