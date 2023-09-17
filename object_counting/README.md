@@ -1,10 +1,10 @@
 # simple_imagui_app
 Simple sample of Object Counting GUI with YOLOv8 and PySimpleGUI
 <br><br>
-space for picture
+![image](https://github.com/chanon-kr/simple_imagui_app/assets/64777509/06e5e1cd-a191-4a7c-aa51-7d7f71e00ae7)
 <br><br>
 ## Medium Article
-space for link
+https://medium.com/@chanon.krittapholchai/build-object-counting-gui-with-yolov8-and-pysimplegui-b1f57f37ae9e
 <br><br>
 # How to use
 ## Git Clone
